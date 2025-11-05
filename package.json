@@ -1,0 +1,27 @@
+{
+  "name": "miao-translator",
+  "version": "1.0.0",
+  "description": "智能语音识别与情绪化语音合成 - Miao 翻译器",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build needed for static site'",
+    "deploy": "echo 'Ready for deployment!'"
+  },
+  "keywords": [
+    "speech-recognition",
+    "text-to-speech",
+    "emotion-analysis",
+    "voice-synthesis",
+    "ai",
+    "translator"
+  ],
+  "author": "Zeon.Xue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/miao-translator.git"
+  },
+  "homepage": "https://miao-translator.vercel.app"
+}

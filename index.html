@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miao 翻译器 - 智能语音助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐱 Miao 翻译器</h1>
+            <p class="subtitle">智能语音识别与情绪化语音合成</p>
+        </header>
+
+        <main>
+            <!-- 语音识别区域 -->
+            <section class="speech-recognition-section">
+                <h2>🎤 语音识别</h2>
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">
+                        <span class="btn-icon">🎙️</span>
+                        开始录音
+                    </button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>
+                        <span class="btn-icon">⏹️</span>
+                        停止录音
+                    </button>
+                </div>
+                
+                <div class="status-indicator">
+                    <div id="statusText">点击开始录音按钮开始语音识别</div>
+                    <div id="listeningIndicator" class="listening-indicator"></div>
+                </div>
+
+                <div class="transcript-area">
+                    <h3>识别结果：</h3>
+                    <div id="transcript" class="transcript-box">
+                        识别的文字将显示在这里...
+                    </div>
+                </div>
+            </section>
+
+            <!-- 情绪分析区域 -->
+            <section class="emotion-analysis-section">
+                <h2>😊 情绪分析</h2>
+                <div class="emotion-display">
+                    <div class="emotion-result">
+                        <span class="emotion-label">检测到的情绪：</span>
+                        <span id="detectedEmotion" class="emotion-value">中性</span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-label">置信度：</div>
+                        <div class="confidence-progress">
+                            <div id="confidenceBar" class="confidence-fill"></div>
+                        </div>
+                        <span id="confidenceValue">0%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 风格化设置区域 -->
+            <section class="style-settings-section">
+                <h2>🎭 风格化设置</h2>
+                <div class="style-options">
+                    <div class="style-group">
+                        <label for="voiceSelect">选择声音：</label>
+                        <select id="voiceSelect" class="voice-select">
+                            <option value="">加载中...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="style-group">
+                        <label for="speedRange">语速：</label>
+                        <input type="range" id="speedRange" min="0.5" max="2" step="0.1" value="1" class="range-input">
+                        <span id="speedValue">1.0x</span>
+                    </div>
+                    
+                    <div class="style-group">
+                        <label for="pitchRange">音调：</label>
+                        <input type="range" id="pitchRange" min="0" max="2" step="0.1" value="1" class="range-input">
+                        <span id="pitchValue">1.0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 语音合成区域 -->
+            <section class="speech-synthesis-section">
+                <h2>🔊 语音合成</h2>
+                <div class="synthesis-area">
+                    <textarea id="textToSpeak" class="text-input" placeholder="输入要转换为语音的文字，或使用上面识别的结果..."></textarea>
+                    
+                    <div class="synthesis-controls">
+                        <button id="speakBtn" class="btn btn-success">
+                            <span class="btn-icon">🔊</span>
+                            开始朗读
+                        </button>
+                        <button id="pauseBtn" class="btn btn-warning" disabled>
+                            <span class="btn-icon">⏸️</span>
+                            暂停
+                        </button>
+                        <button id="resumeBtn" class="btn btn-info" disabled>
+                            <span class="btn-icon">▶️</span>
+                            继续
+                        </button>
+                        <button id="cancelBtn" class="btn btn-danger" disabled>
+                            <span class="btn-icon">⏹️</span>
+                            停止
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 情绪模板区域 -->
+            <section class="emotion-templates-section">
+                <h2>💭 情绪模板</h2>
+                <div class="template-grid">
+                    <div class="template-card" data-emotion="兴奋">
+                        <div class="template-icon">🎉</div>
+                        <div class="template-name">兴奋</div>
+                        <div class="template-example">"哇，两脚兽，本喵的御膳还没准备好呢？"</div>
+                    </div>
+                    <div class="template-card" data-emotion="可爱风">
+                        <div class="template-icon">😸</div>
+                        <div class="template-name">可爱风</div>
+                        <div class="template-example">"肚肚饿饿啦，想吃小鱼干~"</div>
+                    </div>
+                    <div class="template-card" data-emotion="不满">
+                        <div class="template-icon">😾</div>
+                        <div class="template-name">不满</div>
+                        <div class="template-example">"铲屎官又迟到了，哼！"</div>
+                    </div>
+                    <div class="template-card" data-emotion="撒娇">
+                        <div class="template-icon">🥺</div>
+                        <div class="template-name">撒娇</div>
+                        <div class="template-example">"人家想要抱抱嘛~"</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 Miao 翻译器 - 让AI更有温度</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

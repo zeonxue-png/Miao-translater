@@ -6,8 +6,9 @@
   "scripts": {
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000",
-    "build": "echo 'No build needed for static site'",
-    "deploy": "echo 'Ready for deployment!'"
+    "build": "echo 'Static site - no build needed' && exit 0",
+    "deploy": "echo 'Ready for deployment!'",
+    "vercel-build": "echo 'Static site ready for deployment'"
   },
   "keywords": [
     "speech-recognition",
